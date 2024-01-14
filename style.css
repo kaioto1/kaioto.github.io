@@ -1,0 +1,272 @@
+/* Root */
+:root {
+    --lightgray: rgba(0, 0, 0, 0.4);
+    --dark: #000000;
+    --light: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    letter-spacing: 0.4;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 700px;
+    margin: 5rem auto;
+    background-color: var(--light);
+}
+
+/* Fonts */
+p {
+    font-size: 1.8rem;
+    line-height: 2;
+    color: var(--dark);
+}
+
+span {
+    color: var(--dark);
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--dark);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1rem 0;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+h3 {
+    font-size: 1.7rem;
+    margin: 2rem 1rem 0;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+a {
+    font-size: 1.8rem;
+    text-decoration: none;
+    border-bottom: .15rem solid var(--lightgray);
+    color: var(--dark);
+}
+
+section span {
+    color: var(--lightgray);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: .8rem;
+}
+
+.disabled {
+    text-decoration: line-through;
+    border-bottom: none;
+    cursor: default;
+}
+
+.enabeld {
+    text-decoration: underline;
+    border-bottom: 1px solid black;
+    border-bottom: .15rem solid var(--dar);
+    color: var(--dark);
+}
+
+.link:hover {
+    border-bottom: none;
+}
+
+
+/* Nav */
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+    border: none;
+    display: inline;
+    margin-left: 0;
+}
+
+.logo span {
+    color: var(--lightgray);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: 0.8rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0 10rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    margin-left: 2.5rem;
+}
+
+main p {
+    margin-bottom: 2rem
+}
+
+main #work_overview p {
+    margin: 0;
+}
+
+section#additional_links ul li::before,
+section.now ul li::before,
+section.tools ul li::before {
+    content: "\2022";
+    color: var(--lightgray);
+    font-weight: 600;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1.5rem;
+    padding-right: 1rem;
+}
+
+section {
+    margin: 10rem 0;
+}
+
+section li,
+section a {
+    font-size: 1.7rem;
+    line-height: 2;
+    color: var(--dark);
+}
+
+section#additional_links ul,
+section.now ul,
+section.tools ul {
+    margin-left: 2rem;
+}
+
+section ul li {
+    line-height: 2.2;
+}
+
+/* Project overview */
+.project_overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto 1fr 1fr;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark);
+    border-bottom: 1px solid var(--lightgray);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1rem;
+    line-height: 2;
+}
+
+.project_overview p {
+    border-bottom: 1px solid var(--lightgray);
+    padding: 1.75rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.project_overview ul {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--lightgray);
+}
+
+.project_overview ul li {
+    list-style: none;
+    padding-right: .5rem;
+}
+
+/* Now */
+section.now span {
+    margin: 0;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+
+/* Footer */
+footer {
+    margin-top: 10rem;
+}
+
+footer p {
+    margin: 10rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+    }
+
+    :root {
+        --lightgray: rgba(255, 255, 255, .6);
+        --dark: #fafafa;
+    }
+
+    span,
+    li span {
+        color: var(--lightgray);
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.8;
+    }
+
+}
+
+@media screen and (max-width: 699px) {
+    body {
+        margin: 5rem 1.5rem;
+    }
+
+}
+
+@media screen only and (max-width: 399px) {
+
+    p,
+    a,
+    span {
+        font-size: 1.6rem;
+    }
+
+    .project_overview p,
+    .project_overview p a {
+        font-size: 1.6rem;
+        padding: 1.25rem 0;
+    }
+
+    footer {
+        display: block;
+    }
+
+}

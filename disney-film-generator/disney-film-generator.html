@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney-Film-Generator</title>
+
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 70%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .generieren {
+            width: 250px;
+            color: black;
+            padding: 10px;
+            margin: 50px 0;
+            display: block;
+
+        }
+
+        .reset {
+            display: block;
+        }
+
+        .anleitung {
+            display: block;
+        }
+
+        .ausgabe {
+            padding: 0px 5px;
+            background-color: aquamarine;
+        }
+
+        p {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Disney-Film-Generator</h1>
+    <p class="anleitung">Drücken Sie auf den Button mit der Aufschrift "Einen zufälligen Film generieren" und lassen Sie
+        das Programm für Sie einen Disney-Film aussuchen. Viel Spaß beim schauen.</p>
+
+    <button type="button" class="generieren">Einen zufälligen Film generieren</button>
+
+    <p class="caption">Ihre heutige Filmauswahl:</p>
+    <p class="ausgabe"></p>
+
+    <button type="button" class="reset">Reset</button>
+
+
+
+    <script>
+        const ausgabe = document.querySelector(".ausgabe");
+        const button = document.querySelector(".generieren");
+        const reset = document.querySelector(".reset");
+        const movies = [];
+
+        movies.push(
+            "Pinocchio (1940)",
+            "Fantasia (1940)",
+            "Dumbo (1941)",
+            "Bambi (1942)",
+            "Cinderella (1950)",
+            "Alice im Wunderland (1951)",
+            "Peter Pan (1953)",
+            "Susi und Strolch (1955)",
+            "Dornröschen (1959)",
+            "101 Dalmatiner (1961)",
+            "Die Hexe und der Zauberer (1963)",
+            "„Schneewittchen und die sieben Zwerge” (1937)",
+            "„Pinocchio” (1940)",
+            "„Fantasia” (1940)",
+            "„Dumbo” (1941)",
+            "„Bambi” (1942)",
+            "„Cinderella” (1950)",
+            "„Alice im Wunderland” (1951)",
+            "„Peter Pan” (1953)",
+            "„Susi und Strolch” (1955)",
+            "„Dornröschen” (1959)",
+            "„101 Dalmatiner” (1961)",
+            "„Die Hexe und der Zauberer” (1963)",
+            "„Das Dschungelbuch” (1967)",
+            "„Aristocats” (1970)",
+            "„Robin Hood” (1973)",
+            "„Bernard und Bianca – Die Mäusepolizei” (1977)",
+            "„Cap und Capper” (1981)",
+            "„Taran und der Zauberkessel” (1985)",
+            "„Basil, der große Mäusedetektiv” (1986)",
+            "„Oliver & Co.” (1988)",
+            "„Arielle, die Meerjungfrau” (1989)",
+            "„Bernard und Bianca im Känguruland” (1990)",
+            "„Die Schöne und das Biest” (1991)",
+            "„Aladdin” (1992)",
+            "„Der König der Löwen” (1994)",
+            "„Pocahontas” (1995)",
+            "„Toy Story” (1995)",
+            "„Der Glöckner von Notre Dame” (1996)",
+            "„Hercules” (1997)",
+            "„Mulan” (1998)",
+            "„Das große Krabbeln” (1998)",
+            "„Tarzan” (1999)",
+            "„Toy Story 2” (1999)",
+            "„Atlantis – Das Geheimnis der verlorenen Stadt” (2001)",
+            "„Die Monster AG” (2001)",
+            "„Lilo & Stitch” (2002)",
+            "„Der Schatzplanet” (2002)",
+            "„Bärenbrüder” (2003)",
+            "„Findet Nemo” (2003)",
+            "„Die Unglaublichen – The Incredibles” (2004)",
+            "„Cars” (2006)",
+            "„Triff die Robinsons” (2007)",
+            "„Ratatouille” (2007)",
+            "„Bolt – Ein Hund für alle Fälle” (2008)",
+            "„WALL-E – Der Letzte räumt die Erde auf” (2008)",
+            "„Küss den Frosch” (2009)",
+            "„Oben” (2009)",
+            "„Rapunzel – Neu verföhnt” (2010)",
+            "„Toy Story 3” (2010)",
+            "„Cars 2” (2011)",
+            "„Ralph reichts” (2012)",
+            "„Merida – Legende der Highlands” (2012)",
+            "„Die Eiskönigin – Völlig unverfroren” (2013)",
+            "„Die Monster Uni” (2013)",
+            "„Baymax – Riesiges Robowabohu” (2014)",
+            "„Alles steht Kopf” (2015)",
+            "„Arlo & Spot” (2015)",
+            "„Zoomania” (2016)",
+            "„Findet Dori” (2016)",
+            "„Vaiana – Das Paradies hat einen Haken” (2016)",
+            "„Cars 3: Evolution” (2017)",
+            "„Coco – Lebendiger als das Leben!” (2017)",
+            "„Chaos im Netz” (2018)",
+            "„Die Unglaublichen 2” (2018)",
+            "„Die Eiskönigin II” (2019)",
+            "„A Toy Story: Alles hört auf kein Kommando” (2019)",
+            "„Onward: Keine halben Sachen” (2020)",
+            "„Raya und der letzte Drache” (2021)",
+            "„Encanto” (2021)",
+            "„Luca” (2021)",
+            "„Soul” (2021)",
+            "„Strange World” (2022)",
+            "„Rot” (2022)",
+            "„Lightyear” (2022)",
+            "„Elemental” (2023)",
+            "„Wish” (2023)",
+            "„Elia” (2024)",
+            "„Alles steht Kopf 2” (2024)");
+        //console.log("Größe Array: " + movies.length);
+
+        let zufallszahl = Math.floor(Math.random() * movies.length) + 1;
+        console.log("Zufallszahl: " + zufallszahl);
+
+
+        function movieGenerator() {
+            ausgabe.textContent = `${movies[zufallszahl - 1]}`;
+        }
+
+        button.addEventListener("click", movieGenerator);
+
+
+        function resetGenerator() {
+            ausgabe.textContent = "";
+            zufallszahl = Math.floor(Math.random() * movies.length) + 1;
+            console.log("Zufallszahl: " + zufallszahl);
+        }
+
+        reset.addEventListener("click", resetGenerator);
+
+    </script>
+</body>
+
+</html>
