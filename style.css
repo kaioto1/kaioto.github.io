@@ -12,7 +12,6 @@
     box-sizing: border-box;
     font-size: 10px;
     font-family: 'IBM Plex Sans', sans-serif;
-    letter-spacing: 0.4;
 }
 
 html {
@@ -26,10 +25,20 @@ body {
 }
 
 /* Fonts */
-
+p,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+.logo a,
+.logo span {
+    font-size: 1.6rem;
+}
 
 p {
-    font-size: 1.6rem;
     line-height: 2;
     color: var(--dark);
 }
@@ -69,16 +78,6 @@ section span {
     margin-left: .8rem;
 }
 
-p,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-span {
-    font-size: 1.6rem;
-}
 
 .disabled {
     text-decoration: line-through;
@@ -108,21 +107,19 @@ a:hover::after {
 /* Nav */
 
 .logo a {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--dark);
     text-decoration: none;
     border: none;
-    display: inline;
+    display: block;
     margin-left: 0;
 }
 
 .logo span {
     color: var(--lightgray);
-    font-size: 1.6rem;
     font-weight: 400;
     text-decoration: none;
-    margin-left: 0.8rem;
+    margin-left: 0.5rem;
 }
 
 nav {
@@ -164,12 +161,12 @@ section.tools ul li::before {
 }
 
 section {
-    margin: 10rem 0;
+    margin: 12rem 0;
 }
 
 section li,
 section a {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     line-height: 2;
     color: var(--dark);
 }
@@ -191,7 +188,7 @@ section ul li {
     grid-template-rows: auto 1fr 1fr;
 }
 
-h4 {
+h3 {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--dark);
@@ -202,12 +199,13 @@ h4 {
     border-bottom: 1px solid var(--lightgray);
 }
 
-.project_overview h5 {
+.project_overview h4 {
     font-size: 1.4rem;
     border-bottom: 1px solid var(--lightgray);
     padding: 1.75rem 0;
     display: flex;
     align-items: center;
+    font-weight: 400;
 }
 
 .project_overview p {
@@ -242,12 +240,13 @@ h4 {
 
 /* Footer */
 footer {
-    margin-top: 10rem;
+    display: block;
 }
 
 footer p {
-    margin: 10rem 0;
+    color: var(--lightgray);
 }
+
 
 @media (prefers-color-scheme: dark) {
     body {
@@ -266,7 +265,6 @@ footer p {
 
     h1 {
         font-weight: 400;
-        font-size: 1.8rem;
         line-height: 1.8;
     }
 
@@ -277,9 +275,15 @@ footer p {
         margin: 5rem 1.5rem;
     }
 
+
+    h1 {
+        text-align: left;
+    }
+
 }
 
 @media screen and (max-width: 399px) {
+
 
     p,
     a,
@@ -291,10 +295,6 @@ footer p {
     .project_overview p a {
         font-size: 1.6rem;
         padding: 1.25rem 0;
-    }
-
-    footer {
-        display: block;
     }
 
 }
