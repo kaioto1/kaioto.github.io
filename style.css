@@ -1,8 +1,9 @@
 /* Root */
 :root {
     --lightgray: rgba(0, 0, 0, 0.4);
-    --dark: #000000;
+    --dark: #121212;
     --light: #ffffff;
+    --blue: var(--blue);
 }
 
 /* Reset */
@@ -95,9 +96,16 @@ section span {
     font-size: 1.4rem;
 }
 
+a {
+    display: flex;
+    align-items: center;
+}
+
 a:hover::after {
     content: "\003C";
-    color: blue;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--blue);
     padding-left: 0.5rem;
 }
 
@@ -131,6 +139,10 @@ ul {
 }
 
 nav ul {
+    display: flex;
+}
+
+ul li {
     display: flex;
 }
 
@@ -200,7 +212,7 @@ h3 {
 }
 
 .project_overview h4 {
-    color: var(--light);
+    color: var(--dark);
     font-size: 1.4rem;
     border-bottom: 1px solid var(--lightgray);
     padding: 1.75rem 0;
