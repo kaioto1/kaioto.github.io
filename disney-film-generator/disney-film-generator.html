@@ -5,58 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disney-Film-Generator</title>
-
-    <style>
-        html {
-            font-family: sans-serif;
-        }
-
-        body {
-            width: 70%;
-            max-width: 800px;
-            min-width: 480px;
-            margin: 0 auto;
-        }
-
-        .generieren {
-            width: 250px;
-            color: black;
-            padding: 10px;
-            margin: 50px 0;
-            display: block;
-
-        }
-
-        .reset {
-            display: block;
-        }
-
-        .anleitung {
-            display: block;
-        }
-
-        .ausgabe {
-            padding: 0px 5px;
-            background-color: aquamarine;
-        }
-
-        p {
-            display: inline-block;
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/disney-film-generator/disney-film-generator.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;400;500;600&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo"> <a href="" class="link">kaioto1 <span>sandbox</span></a> </li>
+            </ul>
+
+        </nav>
+    </header>
     <h1>Disney-Film-Generator</h1>
     <p class="anleitung">Drücken Sie auf den Button mit der Aufschrift "Einen zufälligen Film generieren" und lassen Sie
         das Programm für Sie einen Disney-Film aussuchen. Viel Spaß beim schauen.</p>
 
-    <button type="button" class="generieren">Einen zufälligen Film generieren</button>
+
+    <div>
+        <button type="button" class="generieren">Einen zufälligen Film generieren</button>
+        <button type="button" class="reset">Reset</button>
+    </div>
 
     <p class="caption">Ihre heutige Filmauswahl:</p>
     <p class="ausgabe"></p>
 
-    <button type="button" class="reset">Reset</button>
+
+
+    <footer>
+        <p>&copy; kaioto1</p>
+    </footer>
 
 
 

@@ -1,0 +1,182 @@
+/* Root */
+:root {
+    --lightgray: rgba(0, 0, 0, 0.4);
+    --dark: #000000;
+    --light: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 700px;
+    margin: 5rem auto;
+    background-color: var(--light);
+}
+
+/* Fonts */
+p,
+h2,
+h3,
+h4,
+a,
+span,
+.logo a,
+.logo span {
+    font-size: 1.6rem;
+}
+
+
+.ausgabe {
+    background-color: blue;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    color: var(--light);
+    padding: 0 0 0 1rem;
+}
+
+p {
+    line-height: 1.4;
+    padding: 1rem 0;
+}
+
+/* Nav */
+
+.logo a {
+    font-weight: 400;
+    color: var(--dark);
+    text-decoration: none;
+    border: none;
+    display: block;
+    margin-left: 0;
+}
+
+.logo span {
+    color: var(--lightgray);
+    font-weight: 400;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 0 10rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    margin-left: 2.5rem;
+}
+
+/* Main */
+
+h1 {
+    font-size: 1.8rem;
+    padding-bottom: 1rem;
+}
+
+button {
+    color: var(--dark);
+    background-color: var(--light);
+    border: 2px solid;
+    padding: 1.25rem 2.5rem;
+    font-size: 1.3rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: blue;
+    color: var(--light);
+}
+
+div {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0;
+}
+
+.generieren {
+    margin-right: 2rem;
+}
+
+
+/* Footer */
+footer {
+    display: block;
+    margin-top: 12rem;
+}
+
+footer p {
+    color: var(--lightgray);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+    }
+
+    :root {
+        --lightgray: rgba(255, 255, 255, .6);
+        --dark: #fafafa;
+    }
+
+    span,
+    li span {
+        color: var(--lightgray);
+    }
+
+    h1 {
+        font-weight: 400;
+        line-height: 1.8;
+    }
+
+}
+
+@media screen and (max-width: 699px) {
+    body {
+        margin: 5rem 1.5rem;
+    }
+
+
+    h1 {
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width: 399px) {
+
+
+    p,
+    a,
+    span {
+        font-size: 1.6rem;
+    }
+
+    .project_overview p,
+    .project_overview p a {
+        font-size: 1.6rem;
+        padding: 1.25rem 0;
+    }
+
+}

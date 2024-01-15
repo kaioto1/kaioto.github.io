@@ -29,8 +29,6 @@ p,
 h2,
 h3,
 h4,
-h5,
-h6,
 a,
 span,
 .logo a,
@@ -87,8 +85,8 @@ section span {
 
 .enabeld {
     text-decoration: underline;
-    border-bottom: 1px solid black;
-    border-bottom: .15rem solid var(--dar);
+    border-bottom: 1px solid var(--dark);
+    border-bottom: .15rem solid var(--dark);
     color: var(--dark);
 }
 
@@ -139,6 +137,8 @@ nav ul {
 nav ul li a {
     margin-left: 2.5rem;
 }
+
+/* Main */
 
 main p {
     margin-bottom: 2rem
@@ -200,6 +200,7 @@ h3 {
 }
 
 .project_overview h4 {
+    color: var(--light);
     font-size: 1.4rem;
     border-bottom: 1px solid var(--lightgray);
     padding: 1.75rem 0;
